@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Struk Transaksi - Warkas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="icons/Warkas192.png">
+  <style>
+    body {
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    .struk-container {
+      max-width: 300px;
+      margin: auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .struk-logo {
+      width: 50px;
+      height: 50px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .struk-header {
+      text-align: center;
+      border-bottom: 2px dashed #e0e0e0;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .struk-header h2 {
+      margin: 5px 0;
+      color: #2c3e50;
+      font-size: 1.5rem;
+    }
+
+    .struk-sub {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 3px 0;
+    }
+
+    .struk-list {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+
+    .struk-list li {
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .item-name {
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .item-details {
+      display: flex;
+      justify-content: space-between;
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .struk-total,
+    .struk-info {
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .struk-total {
+      border-top: 2px dashed #e0e0e0;
+      margin-top: 10px;
+      padding-top: 15px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .struk-footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 2px dashed #e0e0e0;
+    }
+
+    .thank-you-text {
+      font-size: 0.9rem;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+
+    .store-info {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 3px 0;
+    }
+
+    .cetak-btn {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .cetak-btn:hover {
+      background: #34495e;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .struk-container {
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .cetak-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="struk-container">
+    <img src="icons/Warkas.png" alt="Logo Warkas" class="struk-logo" />
+    
+    <div class="struk-header">
+      <h2>Warkas</h2>
+      <div class="struk-sub">Jl. Dsn Panggulan Ds Sera Barat</div>
+      <div class="struk-sub" id="waktu-transaksi"></div>
+      <div class="struk-sub" id="nama-kasir"></div>
+    </div>
+
+    <ul id="daftar-struk" class="struk-list">
+      <!-- Items will be inserted here by JavaScript -->
+    </ul>
+
+    <div class="struk-total">
+      <span>Total</span>
+      <span id="total-struk">Rp 0</span>
+    </div>
+
+    <div class="struk-info">
+      <span>Tunai</span>
+      <span id="bayar-struk">Rp 0</span>
+    </div>
+
+    <div class="struk-info">
+      <span>Kembali</span>
+      <span id="kembalian-struk">Rp 0</span>
+    </div>
+
+    <div class="struk-footer">
+      <div class="thank-you-text">Terima kasih atas kunjungan Anda!</div>
+      <div class="store-info">Follow us on Instagram:</div>
+      <div class="store-info">@warkas.official</div>
+    </div>
+
+    <button class="cetak-btn" onclick="window.print()">
+      Cetak Struk
+    </button>
+  </div>
+
+  <a href="dashboard.html" class="btn btn-secondary mt-3">
+    <i class="fas fa-arrow-left me-2"></i>Kembali ke Dashboard
+  </a>
+
+  <script src="struk.js"></script>
+  ...
+<!-- Konten halaman -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>

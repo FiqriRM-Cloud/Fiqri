@@ -1,0 +1,38 @@
+{
+  "name": "WarKas - Sistem Kasir",
+  "short_name": "WarKas",
+  "start_url": "https://warkas-netlify.netlify.app/dashboard.html",
+  "display": "standalone",
+  "background_color": "#f3f6fb",
+  "theme_color": "#1976d2",
+  "icons": [
+    {
+      "src": "icons/Warkas192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Warkas512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "link": [
+    {
+      "rel": "manifest",
+      "href": "manifest.webmanifest"
+    }
+  ],
+  "meta": [
+    {
+      "name": "theme-color",
+      "content": "#1976d2"
+    }
+  ],
+  "script": [
+    {
+      "src": "sw.js",
+      "type": "text/javascript"
+    }
+  ]
+}
